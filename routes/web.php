@@ -20,13 +20,14 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 // Create for create new post and store it function to creating
 Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
+Route::get('/post/recherche', [PostController::class, 'search'])->name('post.search');
 // Show for show the post selected
 Route::get('/post/show/{id}', [PostController::class, 'show'])->whereNumber('id')->name('post.show');
 // Edit for modify the post and update it function to modify
-Route::get('/post/edit/{post}', [PostController::class, 'edit'])->name('edit.post');
-Route::post('/post/update/{id}', [PostController::class, 'update'])->name('update.post');
+Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('edit.post');
+Route::put('/post/update/{id}', [PostController::class, 'update'])->name('update.post');
 // Delete 
-Route::delete('/post/delete/{post}', [PostController::class, 'destroy'])->name('delete.post');
+Route::get('/post/delete/{id}', [PostController::class, 'destroy'])->name('delete.post');
 // Contact
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 // Contact : Send email 

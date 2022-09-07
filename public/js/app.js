@@ -5446,7 +5446,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start(); // Message error / confirm
+alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start(); // ---------- Favicon ---------------
+
+var faviconTag = document.getElementById("faviconTag");
+var isDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+var changeFavicon = function changeFavicon() {
+  if (isDark.matches) {
+    faviconTag.href = "images/dark.png";
+  } else {
+    faviconTag.href = "images/light.png";
+  }
+};
+
+changeFavicon();
+setInterval(changeFavicon, 1000); // Message error / confirm
 
 var messageErrorValided = document.querySelector('.alert');
 
@@ -5455,25 +5469,20 @@ if (messageErrorValided) {
     messageErrorValided.remove();
   }, 5000);
 } // --------------------------- DELETE POST -----------------------------
-
-
-var linkDeletePost = document.querySelectorAll('#linkDeletePost');
-var deletePost = document.querySelectorAll('#deletePost'); // for linkDeletePost we listen the click
-
-var _loop = function _loop(i) {
-  linkDeletePost[i].addEventListener('click', function (e) {
-    e.preventDefault(); // foreach form we search the form target for delete the post
-
-    for (var j = 0; j < deletePost[i].length; ++j) {
-      // we delete the target post 
-      deletePost[i].submit();
-    }
-  });
-};
-
-for (var i = 0; i < linkDeletePost.length; ++i) {
-  _loop(i);
-} // ----------------------------------
+// const linkDeletePost = document.querySelectorAll('#linkDeletePost');
+// const deletePost = document.querySelectorAll('#deletePost');
+// // for linkDeletePost we listen the click
+// for (let i = 0; i < linkDeletePost.length; ++i) {
+//     linkDeletePost[i].addEventListener('click', function (e) {
+//         e.preventDefault();
+//         // foreach form we search the form target for delete the post
+//         for (let j = 0; j < deletePost[i].length; ++j) {
+//             // we delete the target post 
+//             deletePost[i].submit();
+//         }
+//     })
+// }
+// ----------------------------------
 // ------------ CURSOR ---------------
 
 
@@ -5492,8 +5501,8 @@ changeCursor.addEventListener('click', function handleClick() {
     cursorinner.classList.remove('hidden');
     allButton.classList.add('cursorNone'); // add class for all link
 
-    for (var _i = 0; _i < allLink.length; ++_i) {
-      allLink[_i].classList.add('cursorNone');
+    for (var i = 0; i < allLink.length; ++i) {
+      allLink[i].classList.add('cursorNone');
     }
 
     html.classList.add('cursorNone');
@@ -5523,8 +5532,8 @@ changeCursor.addEventListener('click', function handleClick() {
     allButton.classList.remove('cursorNone');
     html.classList.remove('cursorNone'); // remove class for all link
 
-    for (var _i2 = 0; _i2 < allLink.length; ++_i2) {
-      allLink[_i2].classList.remove('cursorNone');
+    for (var _i = 0; _i < allLink.length; ++_i) {
+      allLink[_i].classList.remove('cursorNone');
     }
 
     cursor.classList.add('hidden');

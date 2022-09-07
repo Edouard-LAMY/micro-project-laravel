@@ -131,6 +131,9 @@ a::selection {
 
 #nav {
     transition: .3s !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .navbar-toggler {
@@ -309,6 +312,9 @@ a::selection {
 }
 
 /* ------------------------ BODY --------------------------  */
+main {
+    margin-top: 130px;
+}
 
 /* ------- POST --------- */
 #linkDeletePost {

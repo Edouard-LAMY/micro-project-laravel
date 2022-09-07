@@ -8,13 +8,12 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         @if (isset($post))
-        <!-- Le formulaire est géré par la route "update.posts" -->
-        <form method="post" action="{{route('update.post', $post)}}">
-            <!-- <input type="hidden" name="_method" value="PUT"> -->
+            <!-- Le formulaire est géré par la route "update.posts" -->
+            <form method="post" action="{{route('update.post', $post->id)}}">
             @method('PUT')
         @else
-        <!-- Le formulaire est géré par la route "posts.store" -->
-        <form method="post" action="{{route('post.store')}}">
+            <!-- Le formulaire est géré par la route "posts.store" -->
+            <form method="post" action="{{route('post.store')}}">
         @endif
             @csrf
             <div class="form-group">

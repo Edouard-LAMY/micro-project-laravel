@@ -6,6 +6,21 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+// ---------- Favicon ---------------
+const faviconTag = document.getElementById("faviconTag");
+const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+const changeFavicon = () => {
+    if (isDark.matches) {
+        faviconTag.href = "images/dark.png";
+    }
+    else {
+        faviconTag.href = "images/light.png";
+    }
+};
+changeFavicon();
+setInterval(changeFavicon, 1000);
+
 
 
 // Message error / confirm
@@ -18,20 +33,20 @@ if (messageErrorValided) {
 }
 
 // --------------------------- DELETE POST -----------------------------
-const linkDeletePost = document.querySelectorAll('#linkDeletePost');
-const deletePost = document.querySelectorAll('#deletePost');
+// const linkDeletePost = document.querySelectorAll('#linkDeletePost');
+// const deletePost = document.querySelectorAll('#deletePost');
 
-// for linkDeletePost we listen the click
-for (let i = 0; i < linkDeletePost.length; ++i) {
-    linkDeletePost[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        // foreach form we search the form target for delete the post
-        for (let j = 0; j < deletePost[i].length; ++j) {
-            // we delete the target post 
-            deletePost[i].submit();
-        }
-    })
-}
+// // for linkDeletePost we listen the click
+// for (let i = 0; i < linkDeletePost.length; ++i) {
+//     linkDeletePost[i].addEventListener('click', function (e) {
+//         e.preventDefault();
+//         // foreach form we search the form target for delete the post
+//         for (let j = 0; j < deletePost[i].length; ++j) {
+//             // we delete the target post 
+//             deletePost[i].submit();
+//         }
+//     })
+// }
 // ----------------------------------
 
 // ------------ CURSOR ---------------
@@ -43,7 +58,6 @@ let cursor = document.querySelector('.cursor');
 let cursorinner = document.querySelector('.cursor2');
 cursor.classList.add('hidden');
 cursorinner.classList.add('hidden');
-
 
 let clickOn = true;
 changeCursor.addEventListener('click', function handleClick() {

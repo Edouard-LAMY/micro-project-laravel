@@ -10,15 +10,15 @@
         <!-- Fonts -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.0/aos.css"/>
-        <link
-        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+        <link rel="shortcut icon" id="faviconTag"  type="image/x-icon" href="{{ asset('images/dark.png') }}">
 
         <!-- CSS -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">  
     </head>
     <body class="">
         
-        @extends('partials.navbar')
+        @include('partials.navbar')
         <!-- Page Content -->
         <main>
             {{-- {{ $slot }} --}}
